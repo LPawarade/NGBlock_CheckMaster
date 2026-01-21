@@ -143,4 +143,4 @@
 
 ## 📬 Contact Me
 * **Name:** Pawarade Liangkobkij
-* **Email:** l.pawarade@gmail.com"# My Project Name" 
+* **Email:** l.pawarade@gmail.com
