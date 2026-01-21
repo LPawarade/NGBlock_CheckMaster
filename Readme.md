@@ -4,21 +4,17 @@
 ![Tech](https://img.shields.io/badge/Tech-C%23%20%7C%20MSSQL-informational)
 
 ## 📌 Project Overview
-&emsp; This project is a system design to verify the condition and pattern of master workpieces. If the verification fails due to out-of-spec measurements or an incorrent pattern, the program will lock machine and require authorization to unlock it. Addtionally, the system verifies the status of previous processes; if a workpiece is marked as NG (Not good) or has skipped a process, the program will alert the user.
+&emsp; This project is designed to improve manufacturing accuracy by automating the Master Check process. The program monitors work values and checking patterns to ensure the machine is functioning correctly. If any error or incorrect pattern is detected, it triggers an electrical signal to stop the machine, requiring authorized access to unlock.
 
+&emsp; Additionally, the system includes an "NG Block" feature that tracks each part’s history to ensure all previous processes were completed successfully. If a part skips a step or arrives with an "NG" status, the program alerts the operator and identifies which process error.
+
+---
 
 ### 🔒 Note on Source Code
 > **Disclaimer:**
 > This project was developed professionally for a private client / company.
 > Due to Non-Disclosure Agreements (NDA) and proprietary rights, the **source code cannot be made public**.
 > This repository serves as a **showcase** of the application's functionality, UI design, and my technical contributions.
-
-*(แปลไทย: โปรเจกต์นี้ถูกพัฒนาขึ้นสำหรับบริษัท/ลูกค้า เนื่องด้วยสัญญาการรักษาความลับและลิขสิทธิ์ ซอร์สโค้ดจึงไม่สามารถเปิดเผยต่อสาธารณะได้ Repository นี้จัดทำขึ้นเพื่อแสดงฟังก์ชันการทำงาน ดีไซน์ และทักษะทางเทคนิคของผู้พัฒนาเท่านั้น)*
-
----
-
-## 🖧 System diagram
-![Database Flow](images/Flowdiagram.png)
 
 ---
 
@@ -45,26 +41,49 @@
 
 ---
 
-## 🛠 Tech Stack
-* **Language:** C#
-* **Framework:** .NET Framework / Windows Forms
-* **Database:** Microsoft SQL Server (MSSQL)
-* **Tools:** Visual Studio, Git
+## 🎯 Objectives
+
+* **Check Machine Condition:** Verifies that the machine can inspecting all specific conditions and parameters defined for each workpiece.
+
+* **Defect Outflow Prevention (Reduce NG):** Prevents defective parts into the next process by enforcing workpiece traceability and scheduling mandatory Master Workpiece checks.
+
+* **Data Digitalization:** Transforms manual data recording and reporting into an automated digital system to ensure high accuracy and enable seamless historical data retrieval.
 
 ---
 
-## ✨ Key Features (Current)
-* ✅ **Setting Pre-Alert:** Set an alert for when it is time to check the master workpiece.
-* ✅ **Hardware Integration:** Connect with IoT devices and communicate via a serial port
-* ✅ **Read and create files:** Read data from files, filter the data to save in the database and create a summary result.
-* ✅ **Check all previous process:** Check that the previous workpiece passed all previous processes to prevent skipping steps or passing defective (NG) items.
-* ✅ **User Role Management:** Seperate access rights for certain program functions between `Admin`, `Engineer` and `Operator`
+## 🏆 Benefits & Business Impact
+
+### 1. Operational Efficiency
+* **Paperless Operation:** Replaced manual paper recording with a fully digital system.
+* **Reduced Cycle Time:** Decreased time spent on manual data entry, allowing operators to focus on production tasks.
+* **Real-time Visibility:** Supervisors can monitor production status instantly via the dashboard without waiting for end-of-day reports.
+
+### 2. Quality Control & Traceability
+* **Human Error Reduction:** Minimized mistakes caused by manual data entry.
+* **Traceability:** Instantly track product history to see when it was made, which machine was used, and who the operator was.
+* **System Alert:** The system automatically alerts and stops the process if abnormalities occur (e.g., skipped steps or machine errors).
+
+###  3. Data Integrity
+* **Single Source:** Centralized all production data in the database, eliminating the need to manually collect data from individual machines.
+* **Decision making:** Provides accurate data to help management make better decisions and improve production planning
+---
+
+## 🖧 System diagram
+![Database Flow](images/Flowdiagram.png)
 
 ---
 
-## 🚧 In Development & Roadmap
-* [ ] **Phase 2:** Create Website to trace workpieces in each process
-* [ ] **Phase 3:** Create Website to show if the master check was done on time.
+## ⚙️ Features
+
+* **Process Traceability:** Validates workpiece process history. The system alerts the operator if a workpiece skipped or NG skipped any previous step.
+
+* **IoT & Hardware Integration:** Establishes real-time data exchange with external IoT devices via Serial Port Communication for immediate measurement acquisition.
+
+* **Check Master Alert:** Automatically notifies operators when a scheduled master check is required to verify machine accuracy and calibration status.
+
+* **Automated Data Processing:** Streamlines the data workflow by reading raw files, filtering data, generating summary reports, and archiving results into the database.
+
+* **Role-Based Access Control (RBAC):** Manages user permission (Admin, Engineer, Operator) to ensure data security and restrict unauthorized access.
 
 ---
 
@@ -98,6 +117,14 @@
 
 ---
 
+## 🛠 Tech Stack
+* **Language:** C#
+* **Framework:** .NET Framework / Windows Forms
+* **Database:** Microsoft SQL Server (MSSQL)
+* **Tools:** Visual Studio, Git
+
+---
+
 ## 💡 Technical Challenges & Solutions
 * **Challenge:**
     * Managing high-frequency workpieces data from machine. 
@@ -108,6 +135,12 @@
 
 ---
 
+## 🚧 In Development & Roadmap
+* [ ] **Phase 2:** Create Website to trace workpieces in each process
+* [ ] **Phase 3:** Create Website to show if the master check was done on time.
+
+---
+
 ## 📬 Contact Me
 * **Name:** Pawarade Liangkobkij
-* **Email:** l.pawarade@gmail.com"# My Project Name" 
+* **Email:** l.pawarade@gmail.com
